@@ -1,3 +1,7 @@
+# Install
+npm install react-bootstrap@next bootstrap@5.1.1
+npm install react-icons --save //https://react-icons.github.io/react-icons/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

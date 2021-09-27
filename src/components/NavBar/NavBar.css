@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+.me-2:hover{
+  color:red !important;  
+}
+.miEstilo{
+  font-family:Montserrat;
+  font-size: 22px;
+  background-color:ghostwhite !important;
+}
+.miBrand{
+  font-size: 28px;
+  font-weight: bold;
+}
