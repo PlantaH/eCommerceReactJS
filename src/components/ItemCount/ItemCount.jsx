@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react'
-import {  Container , Row, Col, Button, Card} from "react-bootstrap";
+import {  Container , Row, Col, Button, Card, ButtonGroup, InputGroup} from "react-bootstrap";
 import './ItemCount.css';
  
 
@@ -29,22 +29,22 @@ const ItemCount = ({stock,initial, onAdd}) => {
                         <Card.Body>
                             <Card.Title>Item</Card.Title>
                             <Card.Text>
-                                <Container fluid>
-                                    <Row className="justify-content-md-center">
-                                        <Col>
-                                            <Button variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
+                                <Container fluid >
+                                    <Row>
+                                        <Col >
+                                            <ButtonGroup aria-label="Basic example">
+                                                <Button  variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
+                                                <InputGroup>
+                                                    <InputGroup.Text id="btnGroupAddon">{stockInicial}</InputGroup.Text>
+                                                </InputGroup>
+                                                <Button  className="me-2" variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
+                                            </ButtonGroup>
                                         </Col>
-                                        <Col className="colItemsSeleccionados"> 
-                                            {stockInicial}
-                                        </Col>
-                                        <Col  > 
-                                            <Button variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
-                                        </Col>
-                                    </Row> 
+                                    </Row>
                                 </Container>    
-                            </Card.Text>
+                            </Card.Text>                            
                             <Container fluid>
-                                <Row className="justify-content-md-center">
+                                <Row>
                                     <Col >
                                         <Button variant="dark" size="sm" onClick={onAdd}>Agregar al carrito</Button>
                                     </Col>

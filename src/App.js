@@ -9,14 +9,23 @@ function App() {
    
   
   return (
-    <div>   
-      <NavBar />
-      <ItemListContainer nombre="Bajos"/>
-     
-      { 
-      /*<Parametros nombre={nombre} edad={12} mayorDeEdad={false} /> */
-      }
-      <Footer/>
+    <div class="wrapper">
+      <header class="header"> <NavBar /></header>
+      <article class="main">
+        <ItemListContainer nombre="Bajos"/>
+        { 
+        /*<Parametros nombre={nombre} edad={12} mayorDeEdad={false} /> */
+        }
+      </article>
+      <aside class="aside aside-1">
+        Filtro
+      </aside>
+      <aside class="aside aside-2">
+        Banners
+      </aside>
+      <footer class="footer"> 
+        <Footer/> 
+      </footer>
     </div>
   );
 }
