@@ -24,39 +24,38 @@ const ItemCount = ({stock,initial, onAdd}) => {
         <Container fluid>
             <Row className="justify-content-md-center">
                 <Col md="auto">
-                    <Card style={{ width: '18rem' }}>  
+                 
+
+                     <Card className="text-center">
                         <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/images/squier-classic-vibe-50-precision-bass-mn-wbl.jpg`} />
                         <Card.Body>
                             <Card.Title>Item</Card.Title>
                             <Card.Text>
                                 <Container fluid>
                                     <Row className="justify-content-md-center">
-                                        <Col md="auto">
+                                        <Col>
                                             <Button variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
                                         </Col>
-                                        <Col md="auto" className="colItemsSeleccionados"> 
+                                        <Col className="colItemsSeleccionados"> 
                                             {stockInicial}
                                         </Col>
-                                        <Col md="auto"> 
+                                        <Col  > 
                                             <Button variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
                                         </Col>
                                     </Row> 
                                 </Container>    
                             </Card.Text>
                             <Container fluid>
-                            <Row className="justify-content-md-center">
-                                <Col md="auto">
-                                    <Button variant="dark" size="sm" onClick={onAdd}>Agregar al carrito</Button>
-                                </Col>
-                            </Row>
+                                <Row className="justify-content-md-center">
+                                    <Col >
+                                        <Button variant="dark" size="sm" onClick={onAdd}>Agregar al carrito</Button>
+                                    </Col>
+                                </Row>
                             </Container>
                         </Card.Body>
                      </Card>
                 </Col>
             </Row>
- 
-            
-            
         </Container>
     )
 }
