@@ -12,12 +12,7 @@ function App() {
     <div>   
       <NavBar />
       <ItemListContainer nombre="Bajos"/>
-      <hr/>
-      <ItemListContainer nombre="Equipos"/>
-      <hr/>
-      <ItemListContainer nombre="Efectos"/>
-      <hr/>
-      <ItemListContainer nombre="Accesorios"/>
+     
       { 
       /*<Parametros nombre={nombre} edad={12} mayorDeEdad={false} /> */
       }
