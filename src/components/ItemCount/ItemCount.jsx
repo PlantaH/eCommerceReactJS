@@ -24,8 +24,6 @@ const ItemCount = ({stock,initial, onAdd}) => {
         <Container fluid>
             <Row className="justify-content-md-center">
                 <Col md="auto">
-                 
-
                      <Card className="text-center">
                         <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/images/squier-classic-vibe-50-precision-bass-mn-wbl.jpg`} />
                         <Card.Body>
