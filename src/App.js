@@ -6,17 +6,23 @@ import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
  
 function App() {
-  let nombre = "hernan"
+   
   
   return (
-    <body>   
+    <div>   
       <NavBar />
-      <ItemListContainer nombre={nombre}/>
+      <ItemListContainer nombre="Bajos"/>
+      <hr/>
+      <ItemListContainer nombre="Equipos"/>
+      <hr/>
+      <ItemListContainer nombre="Efectos"/>
+      <hr/>
+      <ItemListContainer nombre="Accesorios"/>
       { 
       /*<Parametros nombre={nombre} edad={12} mayorDeEdad={false} /> */
       }
       <Footer/>
-    </body>
+    </div>
   );
 }
 
