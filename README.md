@@ -2,6 +2,8 @@
 npm install react-bootstrap@next bootstrap@5.1.1
 # Install react-cons
 npm install react-icons --save //https://react-icons.github.io/react-icons/
+# Install loader
+npm install react-loader-spinner --save
 
 # Getting Started with Create React App
 

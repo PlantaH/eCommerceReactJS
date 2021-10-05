@@ -4,7 +4,7 @@ import {  Navbar,  Container,  Nav} from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
 import { GiGuitarBassHead } from "react-icons/gi";
 
-const NavBar = () => { 
+const NavBar = ({totalItemsCarrito}) => { 
   return (
      
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="miEstilo">
@@ -29,7 +29,7 @@ const NavBar = () => {
           <Nav.Link className="me-2" href="#Accesorios">
           Accesorios
           </Nav.Link>  
-          <CartWidget />         
+          <CartWidget totalItemsCarrito={totalItemsCarrito}/>         
         </Nav>
       </Navbar.Collapse>
     </Container>

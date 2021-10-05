@@ -3,13 +3,13 @@ import { Button, Badge } from "react-bootstrap";
 import { ImCart } from "react-icons/im";
 
 
-const CartWidget = () => {
+const CartWidget = ({totalItemsCarrito}) => {
     return (
         <div>
             <Button variant="dark">
                 <ImCart className="me-2" />
                 <Badge text="dark" bg="light">
-                0
+                {totalItemsCarrito}
                 </Badge>
             </Button>
         </div>
