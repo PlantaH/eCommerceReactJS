@@ -14,10 +14,10 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
        setStockInicial(parseInt(stockInicial) + parseInt(valor))      
     }
     
-    useEffect((stock) => {
+    useEffect(() => {
         stockInicial  === stock ? setDisabledAdd(true) : setDisabledAdd(false)
         stockInicial  === 0 ? setDisabledRes(true) : setDisabledRes(false) 
-    },[stockInicial] )
+    },[stockInicial,stock] )
 
     const AgregarCarrito = () => {  
         setStockInicial(1)        
