@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react'
-import {  Container , Row, Col, Button, Card, ButtonGroup, InputGroup} from "react-bootstrap";
+import {  Container , Row, Col, Button,  ButtonGroup, InputGroup} from "react-bootstrap";
 import './ItemCount.css';
  
 
@@ -15,8 +15,8 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
     }
     
     useEffect( () =>{
-        stockInicial  == stock ? setDisabledAdd(true) : setDisabledAdd(false)
-        stockInicial  == 0 ? setDisabledRes(true) : setDisabledRes(false) 
+        stockInicial  === stock ? setDisabledAdd(true) : setDisabledAdd(false)
+        stockInicial  === 0 ? setDisabledRes(true) : setDisabledRes(false) 
     },[stockInicial]  )
 
     const AgregarCarrito = () => {  

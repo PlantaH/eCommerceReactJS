@@ -1,10 +1,8 @@
-import React , { useState, useEffect } from 'react'
+import React  from 'react'
 import {  Container , Row, Col,  Card} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";  
 
 const Item = ({nombreProducto,stock,initial,foto, totalItemsCarrito , setTotalItemsCarrito}) => {
-    
-
     
     return (
         <Container fluid>
