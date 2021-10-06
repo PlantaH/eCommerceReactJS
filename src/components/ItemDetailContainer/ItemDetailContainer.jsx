@@ -13,8 +13,6 @@ const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
     const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(item)
-                 
-           
         }, 2000); 
     });
     getItem.then((resp) =>  {

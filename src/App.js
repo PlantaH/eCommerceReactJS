@@ -7,7 +7,6 @@ import './App.css';
 import NavBar from "./components/NavBar/NavBar"
 import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
@@ -19,16 +18,14 @@ function App() {
 
   const getMensaje = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(mensaje);
-      setMensaje("Hola mundo");
+      resolve(mensaje);     
     }, 5000); 
   });
-
-   
-
-   
-
   
+  getMensaje.then((resp) =>  {
+    setMensaje("banner publicidad");
+  });
+
   return (
     <div class="wrapper">
       <header class="header"> 
