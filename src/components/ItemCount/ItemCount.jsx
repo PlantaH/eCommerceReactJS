@@ -23,13 +23,11 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
         setStockInicial(1)        
         setTotalItemsCarrito(parseInt(totalItemsCarrito) + parseInt(stockInicial))
     }
-
     
-    return (
-        
-        <Container >
+    return (        
+        <Container>
             <Row>
-                <Col >
+                <Col>
                     <ButtonGroup aria-label="Basic example">
                         <Button  variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
                         <InputGroup>
@@ -38,16 +36,13 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
                         <Button  className="me-2" variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
                     </ButtonGroup>
                 </Col>
-            </Row>
-        
-            <Row>
-                <Col >
+            </Row>        
+            <Row style={{ padding: 10 }}>
+                <Col>
                     <Button variant="dark" size="sm" onClick={AgregarCarrito}>Agregar al carrito</Button>
                 </Col>
             </Row>
         </Container>
-                         
-         
     )
 }
 

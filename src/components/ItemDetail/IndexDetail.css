@@ -1,0 +1,24 @@
+.tituloItem{
+    font-size: 1.2rem;
+}
+
+.descripcionTituloItem{
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: justify;
+}
+.descripcionItem{
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+
+.precioItem{
+    font-size: 2rem;
+    color: red !important;
+}
+
+.fotoItem{
+    width:400px;
+    height:400px;
+}
