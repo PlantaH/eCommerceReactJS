@@ -18,12 +18,11 @@ const ItemList = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
    
     const getItems = new Promise((resolve, reject) => {        
         setTimeout(() => {         
-            resolve(items);
-            setLoading(false)         
-        }, 2000);
+            resolve(items);                    
+        }, 4000);
     });    
   
-    //getItems.then((resp) => console.log(resp));
+    getItems.then((resp) => setLoading(false) );
  
     return (
         <div>
@@ -43,7 +42,7 @@ const ItemList = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
                                 color="#00BFFF"
                                 height={100}
                                 width={100}
-                                timeout={2000} //3 secs
+                                timeout={4000} //3 secs
                             />
                         :                    
                             items.map(item => <Col><Item id={item.id} nombreProducto={item.nombre} stock={item.stock} initial={item.initial} foto={item.img} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} /></Col>)                    

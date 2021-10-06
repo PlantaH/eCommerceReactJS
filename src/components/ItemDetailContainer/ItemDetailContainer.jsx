@@ -13,19 +13,21 @@ const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
     const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(item)
-            setItem(producto)
-            setLoading(false)       
+                 
            
-        }, 4000); 
+        }, 2000); 
     });
-   
+    getItem.then((resp) =>  {
+        setItem(producto)
+        setLoading(false) 
+    });
 
     return (        
         <div>  
            {
                 loading
                 ?
-                    <Loader type="Audio" color="red" height={100} width={100} timeout={4000} />
+                    <Loader type="Audio" color="red" height={100} width={100} timeout={2000} />
                 :                    
                     <ItemDetail key={item.id} producto={item} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
             }              
