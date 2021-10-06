@@ -19,7 +19,7 @@ const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
                         <Container fluid>
                             <Row>
                                 <Col sm={6} className="m-auto">
-                                    <img className="d-block mx-auto img-fluid"   src={img} ></img>
+                                    <img className="d-block mx-auto img-fluid"   src={img} alt={nombre}></img>
                                 </Col>
                             </Row>
                         </Container>
