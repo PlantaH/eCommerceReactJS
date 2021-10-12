@@ -1,7 +1,7 @@
 import React  from 'react'
 import {  Container , Row, Col,  Card} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";  
-import './Index.css'; 
+import './Item.css'; 
 
 const Item = ({nombreProducto,stock,initial,foto, totalItemsCarrito , setTotalItemsCarrito}) => {
     
@@ -10,7 +10,7 @@ const Item = ({nombreProducto,stock,initial,foto, totalItemsCarrito , setTotalIt
             <Row className="justify-content-md-center">
                 <Col md="auto">
                      <Card className="text-center">
-                        <Card.Img variant="top" src={foto} />
+                        <center><Card.Img variant="top" src={foto} className="fotoList" /></center>
                         <Card.Body>
                             <Card.Title className="titulo">{nombreProducto}</Card.Title>                            
                         </Card.Body>                        

@@ -1,0 +1,47 @@
+export const listaProductos = [    
+    {   id : 0 , 
+        nombre :"FENDER PLAYER PLUS PRECISION BASS COSMIC JADE", 
+        stock:5, 
+        initial:1, 
+        img :"https://www.todobajos.com/12134-large_default/fender-player-plus-precision-bass-cosmic-jade.jpg",
+        descripcion: "esta es la descripcion",
+        home: 1,
+        categoria: "bajos"
+    },
+    {   id : 1 , 
+        nombre :"FENDER CUSTOM SHOP LIMITED P-JAZZ BASS JRN ALPB", 
+        stock:33, 
+        initial:1, 
+        img :"https://www.todobajos.com/12176-large_default/fender-custom-shop-limited-p-jazz-bass-jrn-alpb.jpg",
+        descripcion: "esta es la descripcion",
+        home: 0,
+        categoria: "bajos"
+    },
+    {   id : 2 , 
+        nombre :"MUSIC MAN STINGRAY SPECIAL 4 HH BFR KINGPIN",      
+        stock:1, 
+        initial:1, 
+        img :"https://www.todobajos.com/12095-large_default/music-man-stingray-special-4-hh-bfr-kingpin.jpg",
+        descripcion: "esta es la descripcion",
+        home: 0,
+        categoria: "bajos"
+    },
+    {   id : 3 , 
+        nombre :"SANDBERG CALIFORNIA II TT 4 SAN REMO BLUE", 
+        stock:10, 
+        initial:1, 
+        img :"https://www.todobajos.com/10847-large_default/sandberg-california-ii-tt-4-san-remo-blue-hardcore.jpg",
+        descripcion: "esta es la descripcion",
+        home: 0,
+        categoria: "bajos"
+    },
+    {   id : 100 , 
+        nombre :"Ampeg Rocket Bass RB-210", 
+        stock:1, 
+        initial:1, 
+        img :"https://www.todobajos.com/12008-home_default/ampeg-rocket-bass-rb-210.jpg",
+        descripcion: "esta es la descripcion",
+        home: 1,
+        categoria: "equipos"
+    } 
+  ];

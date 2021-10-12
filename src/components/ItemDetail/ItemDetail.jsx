@@ -1,5 +1,6 @@
 import React from 'react'
 import {  Container , Row, Col,  Card} from "react-bootstrap";
+
 import ItemCount from "../ItemCount/ItemCount";  
 import './IndexDetail.css'; 
 
@@ -19,7 +20,7 @@ const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
                         <Container fluid>
                             <Row>
                                 <Col sm={6} className="m-auto">
-                                    <img className="d-block mx-auto img-fluid"   src={img} alt={nombre}></img>
+                                    <img className="d-block mx-auto img-fluid fotoItem"  src={img} alt={nombre}></img>
                                 </Col>
                             </Row>
                         </Container>

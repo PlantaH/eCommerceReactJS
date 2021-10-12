@@ -1,29 +1,15 @@
-import React, { useState } from 'react'
+import React  from 'react'
+import { useParams } from 'react-router';
+
 import { Container, Row, Col } from "react-bootstrap";
 import Item from "../Item/Item";
-import Loader from "react-loader-spinner";
 
-const ItemList = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
 
-    const [loading, setLoading] = useState(true)
+import { Link } from "react-router-dom";
 
-    const items = [
+const ItemList = ({nombre,items,totalItemsCarrito,setTotalItemsCarrito}) => {
+   
     
-        { id : 0 , nombre :"FENDER PLAYER PLUS PRECISION BASS COSMIC JADE", stock:5, initial:1, img :"https://www.todobajos.com/12134-large_default/fender-player-plus-precision-bass-cosmic-jade.jpg"},
-        { id : 1 , nombre :"FENDER CUSTOM SHOP LIMITED P-JAZZ BASS JRN ALPB", stock:4, initial:1, img :"https://www.todobajos.com/12176-large_default/fender-custom-shop-limited-p-jazz-bass-jrn-alpb.jpg"},
-        { id : 2 , nombre :"MUSIC MAN STINGRAY SPECIAL 4 HH BFR KINGPIN",      stock:1, initial:1, img :"https://www.todobajos.com/12095-large_default/music-man-stingray-special-4-hh-bfr-kingpin.jpg"},
-        { id : 3 , nombre :"SANDBERG CALIFORNIA II TT 4 SAN REMO BLUE", stock:10, initial:1, img :"https://www.todobajos.com/10847-large_default/sandberg-california-ii-tt-4-san-remo-blue-hardcore.jpg"} 
-    ]
-   
-   
-    const getItems = new Promise((resolve, reject) => {        
-        setTimeout(() => {         
-            resolve(items);                    
-        }, 4000);
-    });    
-  
-    getItems.then((resp) => setLoading(false) );
- 
     return (
         <div>
            <div>
@@ -34,18 +20,8 @@ const ItemList = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
                    
                 <Container fluid>
                     <Row className="justify-content-md-center">         
-                    {
-                        loading
-                        ?
-                            <Loader
-                                type="ThreeDots"
-                                color="#00BFFF"
-                                height={100}
-                                width={100}
-                                timeout={4000} //3 secs
-                            />
-                        :                    
-                            items.map(item => <Col><Item id={item.id} nombreProducto={item.nombre} stock={item.stock} initial={item.initial} foto={item.img} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} /></Col>)                    
+                    {                                          
+                        items.map(item => <Col><Link to={`/detail/${item.nombre}`}><Item id={item.id} nombreProducto={item.nombre} stock={item.stock} initial={item.initial} foto={item.img} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} /></Link></Col>)                    
                     }   
                     </Row>
                 </Container>                          

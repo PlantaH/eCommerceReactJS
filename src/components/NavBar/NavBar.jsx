@@ -1,40 +1,43 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import './NavBar.css';
 import {  Navbar,  Container,  Nav} from "react-bootstrap";
+
 import CartWidget from "../CartWidget/CartWidget";
 import { GiGuitarBassHead } from "react-icons/gi";
 
+
+
 const NavBar = ({totalItemsCarrito}) => { 
-  return (
-     
+  return (     
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="miEstilo">
     <Container>
       <GiGuitarBassHead  /> 
-      <Navbar.Brand href="#home" className="miBrand">Bajo Mundo</Navbar.Brand>
+      <Navbar.Brand className="miBrand"><Link to={`/`}>Bajo Mundo</Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link className="me-2" href="#home">
-            Home
+          <Nav.Link className="me-2">
+            <Link to={`/`}>Home</Link>
           </Nav.Link>          
-          <Nav.Link className="me-2" href="#Bajos">
-          Bajos
+          <Nav.Link className="me-2">
+            <Link to={`/list/bajos`}>Bajos</Link>
           </Nav.Link>
-          <Nav.Link className="me-2" href="#Equipos">
-          Equipos
+          <Nav.Link className="me-2">
+            <Link to={`/list/equipos`}>Equipos</Link>
           </Nav.Link>
-          <Nav.Link className="me-2" href="#Efectos">
-          Efectos
+          <Nav.Link className="me-2">
+            <Link to={`/list/efectos`}>Efectos</Link> 
           </Nav.Link>
-          <Nav.Link className="me-2" href="#Accesorios">
-          Accesorios
+          <Nav.Link className="me-2">
+            <Link to={`/list/accesorios`}>Accesorios</Link>
           </Nav.Link>  
           <CartWidget totalItemsCarrito={totalItemsCarrito}/>         
         </Nav>
       </Navbar.Collapse>
     </Container>
-  </Navbar>
-     
+  </Navbar>     
   );
 };
 export default NavBar;

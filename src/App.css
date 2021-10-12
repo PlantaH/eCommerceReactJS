@@ -4,7 +4,10 @@ body {
   
 }
 
-
+a{
+  text-decoration: none;
+  color: black;
+}
 .wrapper {
   display: flex;  
   flex-flow: row wrap;
@@ -22,22 +25,17 @@ body {
 }
 
 .footer {
-  background: ghostwhite;
+  background:black;
   margin-top: 1rem; 
 }
+
 
 .main {
   text-align: left;
   background: white;
 }
 
-.aside-1 {
-  background: white;
-}
-
-.aside-2 {
-  background: white;
-}
+ 
 
 @media all and (min-width: 600px) {
   .aside { flex: 1 0 0; }
