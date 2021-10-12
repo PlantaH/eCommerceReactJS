@@ -5,8 +5,9 @@ export const listaProductos = [
         initial:1, 
         img :"https://www.todobajos.com/12134-large_default/fender-player-plus-precision-bass-cosmic-jade.jpg",
         descripcion: "esta es la descripcion",
-        home: 1,
-        categoria: "bajos"
+        home: "S",
+        categoria: "bajos",
+        precio: "USD 100"
     },
     {   id : 1 , 
         nombre :"FENDER CUSTOM SHOP LIMITED P-JAZZ BASS JRN ALPB", 
@@ -14,8 +15,9 @@ export const listaProductos = [
         initial:1, 
         img :"https://www.todobajos.com/12176-large_default/fender-custom-shop-limited-p-jazz-bass-jrn-alpb.jpg",
         descripcion: "esta es la descripcion",
-        home: 0,
-        categoria: "bajos"
+        home: "N",
+        categoria: "bajos",
+        precio: "USD 101"
     },
     {   id : 2 , 
         nombre :"MUSIC MAN STINGRAY SPECIAL 4 HH BFR KINGPIN",      
@@ -23,8 +25,9 @@ export const listaProductos = [
         initial:1, 
         img :"https://www.todobajos.com/12095-large_default/music-man-stingray-special-4-hh-bfr-kingpin.jpg",
         descripcion: "esta es la descripcion",
-        home: 0,
-        categoria: "bajos"
+        home: "N",
+        categoria: "bajos",
+        precio: "USD 102"
     },
     {   id : 3 , 
         nombre :"SANDBERG CALIFORNIA II TT 4 SAN REMO BLUE", 
@@ -32,8 +35,9 @@ export const listaProductos = [
         initial:1, 
         img :"https://www.todobajos.com/10847-large_default/sandberg-california-ii-tt-4-san-remo-blue-hardcore.jpg",
         descripcion: "esta es la descripcion",
-        home: 0,
-        categoria: "bajos"
+        home: "N",
+        categoria: "bajos",
+        precio: "USD 103"
     },
     {   id : 100 , 
         nombre :"Ampeg Rocket Bass RB-210", 
@@ -41,7 +45,38 @@ export const listaProductos = [
         initial:1, 
         img :"https://www.todobajos.com/12008-home_default/ampeg-rocket-bass-rb-210.jpg",
         descripcion: "esta es la descripcion",
-        home: 1,
-        categoria: "equipos"
+        home: "S",
+        categoria: "equipos",
+        precio: "USD 104"
+    },
+    {   id : 200 , 
+        nombre :"Darkglass ADAM", 
+        stock:1, 
+        initial:1, 
+        img :"https://www.todobajos.com/11845-home_default/darkglass-adam.jpg",
+        descripcion: "esta es la descripcion",
+        home: "S",
+        categoria: "efectos",
+        precio: "USD 105"
+    } ,
+    {   id : 300 , 
+        nombre :"Dr String Hi Beams LR5-40", 
+        stock:1, 
+        initial:1, 
+        img :"https://www.todobajos.com/11288-home_default/dr-string-hi-beams-lr5-40.jpg",
+        descripcion: "esta es la descripcion",
+        home: "S",
+        categoria: "accesorios",
+        precio: "USD 106"
+    } ,
+    {   id : 301 , 
+        nombre :"Protection Racket 7151 Bass Deluxe", 
+        stock:1, 
+        initial:1, 
+        img :"https://www.todobajos.com/7953-home_default/protection-racket-7151-bass-deluxe.jpg",
+        descripcion: "esta es la descripcion",
+        home: "N",
+        categoria: "accesorios",
+        precio: "USD 107"
     } 
   ];

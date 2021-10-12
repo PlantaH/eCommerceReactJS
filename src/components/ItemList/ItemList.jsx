@@ -1,5 +1,4 @@
-import React  from 'react'
-import { useParams } from 'react-router';
+import React  from 'react' 
 
 import { Container, Row, Col } from "react-bootstrap";
 import Item from "../Item/Item";

@@ -21,7 +21,7 @@ const Home = ({totalItemsCarrito,setTotalItemsCarrito}) => {
         const result = await getProductos;
         
         let result_filtro = result.filter(function(p) {
-          return p.home == "1"; });
+          return p.home === "S"; });
 
         setProductos(result_filtro)
 

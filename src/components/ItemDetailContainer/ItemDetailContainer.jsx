@@ -10,7 +10,7 @@ const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
 
     const {name} = useParams() //para tomar el parametro del link
    
-    const producto = listaProductos.find(function(p) { return p.nombre == name; });
+    const producto = listaProductos.find(function(p) { return p.nombre === name; });
     
     const [loading, setLoading] = useState(true)
     const [item, setItem] = useState([])

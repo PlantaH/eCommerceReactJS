@@ -35,6 +35,7 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
             console.log(error)
         }
     } 
+ 
 
     const getSeccion = () =>{        
         getProductosJSON()
