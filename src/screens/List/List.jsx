@@ -12,7 +12,7 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
     
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [seccion, setSeccion] = useState();
+     
 
 
     const getProductos = new Promise((resolve,reject) => {
@@ -25,7 +25,7 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
         try{
             const result = await getProductos;
 
-            let result_filtro = result.filter(function(p) { return p.categoria == name; });
+            let result_filtro = result.filter(function(p) { return p.categoria === name; });
 
             setProductos(result_filtro)        
 
@@ -36,14 +36,10 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
         }
     } 
  
-
-    const getSeccion = () =>{        
-        getProductosJSON()
-    }
-
+ 
    useEffect(() => {   
-        getSeccion()
-    }, seccion) 
+      getProductosJSON()
+    }, []) 
 
     
      
