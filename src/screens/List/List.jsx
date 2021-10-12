@@ -12,20 +12,18 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
     
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-     
-
-
+    
     const getProductos = new Promise((resolve,reject) => {
         setTimeout( ()=> {
             resolve(listaProductos)
         },1000)
     })
 
-    const getProductosJSON = async() =>{
+    const getProductosJSON = async(categoria) =>{
         try{
             const result = await getProductos;
 
-            let result_filtro = result.filter(function(p) { return p.categoria === name; });
+            let result_filtro = result.filter(function(p) { return p.categoria === categoria; });
 
             setProductos(result_filtro)        
 
@@ -36,13 +34,14 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
         }
     } 
  
- 
-   useEffect(() => {   
-      getProductosJSON()
-    }, []) 
-
     
-     
+    useEffect(() => {            
+        if (name !== undefined) {
+            setLoading(true)
+            getProductosJSON(name);
+        }
+      }, [name]);
+
     return (
         <>
           
@@ -51,7 +50,7 @@ const List = ({totalItemsCarrito,setTotalItemsCarrito}) => {
               ?
                 <Loader type="ThreeDots" color="#00BFFF" height={100} width={100} timeout={1000} />
               :                    
-                <ItemListContainer nombre={name} items={productos} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito}/>       
+                <ItemListContainer nombre={name.toUpperCase()} items={productos} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito}/>       
           } 
 
         </>
