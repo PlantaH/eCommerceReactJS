@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 import './NavBar.css';
-import {  Navbar,  Container,  Nav} from "react-bootstrap";
+import {  Navbar,  Container,  Nav,Form, FormControl, Button} from "react-bootstrap";
 
 import CartWidget from "../CartWidget/CartWidget";
 import { GiGuitarBassHead } from "react-icons/gi";
@@ -10,6 +10,11 @@ import { GiGuitarBassHead } from "react-icons/gi";
 
 
 const NavBar = ({totalItemsCarrito}) => { 
+  const [state, setState] = useState('');
+  const handleChange = (e) => {
+    !/[aiueo]/.test(e.target.value) && setState(e.target.value);
+  };
+
   return (     
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="miEstilo">
     <Container>
@@ -35,8 +40,12 @@ const NavBar = ({totalItemsCarrito}) => {
           </Nav.Link>  
           <CartWidget totalItemsCarrito={totalItemsCarrito}/>         
         </Nav>
+        <Form className="d-flex">
+            <FormControl onChange={handleChange}  type="search" placeholder="Search" className="mr-2" aria-label="Search" value={state}/>
+            <Button variant="outline-success">Search</Button>
+        </Form>
       </Navbar.Collapse>
-    </Container>
+    </Container>    
   </Navbar>     
   );
 };

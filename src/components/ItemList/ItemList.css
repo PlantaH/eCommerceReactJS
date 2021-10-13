@@ -1,0 +1,9 @@
+.contenedorItems{
+    margin-top: 2rem; 
+}
+
+.contenedorTitulo{
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+    text-transform:uppercase;
+}

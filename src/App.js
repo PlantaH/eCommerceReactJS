@@ -6,13 +6,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'; 
 
 import NavBar from "./components/NavBar/NavBar"
-
-import Home  from './screens/Home/Home'
+ 
 import Cart from './screens/Cart/Cart'
-import List from './screens/List/List'
-import Detail from './screens/Detail/Detail'
+
 import Footer from './screens/Footer/Footer'
 import Error404 from './screens/Error404/Error404'
+
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Detail from './screens/Detail/Detail'
+
+
 
 function App() {
    
@@ -30,10 +33,10 @@ function App() {
             <article className="main">     
               <Switch>
                 <Route exact path="/">
-                  <Home totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
+                  <ItemListContainer nombre="Destacados" totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
                 </Route>
                 <Route exact path="/list/:name">
-                  <List totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
+                  <ItemListContainer nombre="Productos" totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart />
