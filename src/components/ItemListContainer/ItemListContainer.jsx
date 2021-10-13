@@ -16,10 +16,6 @@ const ItemListContainer = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true)
 
-    
-
-    
-    
     useEffect(() => {   
         setLoading(true);    
         
@@ -48,7 +44,7 @@ const ItemListContainer = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
             try{
                 const result = await getProductos;
                 
-                let result_filtro = result.filter(function(p) { return p.home === "S"; });
+                let result_filtro = result //.filter(function(p) { return p.home === "S"; });
     
                 setProductos(result_filtro)
     
