@@ -4,8 +4,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import Item from "../Item/Item";
 
 
-import { Link } from "react-router-dom";
-
 const ItemList = ({nombre,items,totalItemsCarrito,setTotalItemsCarrito}) => {
    
     
@@ -20,7 +18,7 @@ const ItemList = ({nombre,items,totalItemsCarrito,setTotalItemsCarrito}) => {
                 <Container fluid>
                     <Row className="justify-content-md-center">         
                     {                                          
-                        items.map(item => <Col><Link to={`/detail/${item.nombre}`}><Item id={item.id} nombreProducto={item.nombre} stock={item.stock} initial={item.initial} foto={item.img} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} /></Link></Col>)                    
+                        items.map(item => <Col><Item id={item.id} nombreProducto={item.nombre} stock={item.stock} initial={item.initial} foto={item.img} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} /></Col>)                    
                     }   
                     </Row>
                 </Container>                          
