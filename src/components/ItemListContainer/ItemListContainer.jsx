@@ -8,8 +8,7 @@ import Loader from "react-loader-spinner";
 
 import ItemList from "../ItemList/ItemList"; 
 
-const ItemListContainer = ({nombre,totalItemsCarrito,setTotalItemsCarrito}) => {
-    
+const ItemListContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {    
   
     const {name} = useParams() //para tomar el parametro del link
     

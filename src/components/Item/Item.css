@@ -2,5 +2,18 @@
     font-size: 0.8rem;
 }
 .fotoList{
-    width: 300px;
+    width: 300px; 
 }
+.tarjetaItem{
+   margin-bottom: 10px;
+   width: 350px;
+}
+
+.tarjetaBoton{
+    margin: 10px;    
+ }
+
+ 
+.tarjetaBoton:hover{
+    background-color: darkgray;
+ }

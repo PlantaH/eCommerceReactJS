@@ -38,7 +38,11 @@ const NavBar = ({totalItemsCarrito}) => {
           <Nav.Link className="me-2">
             <Link to={`/list/accesorios`}>Accesorios</Link>
           </Nav.Link>  
-          <CartWidget totalItemsCarrito={totalItemsCarrito}/>         
+          <Nav.Link className="me-2">
+            <Link to={`/cart`}>
+              <CartWidget totalItemsCarrito={totalItemsCarrito}/>         
+            </Link>
+          </Nav.Link>    
         </Nav>
         <Form className="d-flex">
             <FormControl onChange={handleChange}  type="search" placeholder="Search" className="mr-2" aria-label="Search" value={state}/>

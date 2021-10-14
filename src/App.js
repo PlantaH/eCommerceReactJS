@@ -5,16 +5,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'; 
 
-import NavBar from "./components/NavBar/NavBar"
- 
-import Cart from './screens/Cart/Cart'
+import NavBar from "./components/NavBar/NavBar" 
+import Cart from './components/Cart/Cart'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Detail from './components/Detail/Detail'
 
 import Footer from './screens/Footer/Footer'
 import Error404 from './screens/Error404/Error404'
-
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Detail from './screens/Detail/Detail'
-
 
 
 function App() {

@@ -1,18 +1,26 @@
-import React from 'react'
-import {  Container , Row, Col,  Card} from "react-bootstrap";
+import React , { useState } from 'react'
+import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import ItemCount from "../ItemCount/ItemCount";  
 import './IndexDetail.css'; 
 
 const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
     
-    const {nombre,precio,img,stock,initial,descripcion} = producto
+    const {id,nombre,precio,img,stock,initial,descripcion} = producto
  
+    const [open,setOpen] = useState(true)
+ 
+    const onAdd = (quantityToAdd) => {         
+        setOpen(false)           
+        setTotalItemsCarrito(parseInt(totalItemsCarrito) + parseInt(quantityToAdd))
+    }
+
     return (
         <Container fluid>
             <Row className="justify-content-md-center">
                 <Col md="auto">
-                     <Card className="text-center">
+                     <Card className="text-center itemDetailTarjeta">
                         <Card.Body>
                             <Card.Title className="tituloItem">{nombre}</Card.Title>                             
                         </Card.Body>  
@@ -33,8 +41,15 @@ const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
                         <Card.Body>
                             <Card.Title className="precioItem">{precio}</Card.Title>                              
                         </Card.Body>                        
+
                         
-                        <ItemCount  stock={stock} initial={initial} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
+                            {open  ? 
+                                <ItemCount key={id} stock={stock} initial={initial} onAdd={onAdd}  />
+                            :
+                                 <div className="cont-Botones"><Link to={`/cart`}><Button variant="dark" size="sm">Ir al carrito</Button></Link></div>                           
+                            }  
+                        
+
                      </Card>
                 </Col>
             </Row>

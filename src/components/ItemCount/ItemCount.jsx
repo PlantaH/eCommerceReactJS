@@ -3,12 +3,15 @@ import {  Container , Row, Col, Button,  ButtonGroup, InputGroup} from "react-bo
 import './ItemCount.css';
  
 
-const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) => {
+
+const ItemCount = ({stock,initial,onAdd}) => {
     
     const [stockInicial, setStockInicial] = useState(initial)
 
     const[disabledAdd, setDisabledAdd] = useState(false)
     const[disabledRes, setDisabledRes] = useState(false)
+    
+   
     
     const AddItem = (valor) => {       
        setStockInicial(parseInt(stockInicial) + parseInt(valor))      
@@ -19,13 +22,14 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
         stockInicial  === 0 ? setDisabledRes(true) : setDisabledRes(false) 
     },[stockInicial,stock] )
 
-    const AgregarCarrito = () => {  
-        setStockInicial(1)        
-        setTotalItemsCarrito(parseInt(totalItemsCarrito) + parseInt(stockInicial))
+    const itemDetail = () =>{
+        onAdd(parseInt(stockInicial))
+        setStockInicial(1)     
     }
-    
+     
     return (        
         <Container>
+           
             <Row>
                 <Col>
                     <ButtonGroup aria-label="Basic example">
@@ -36,12 +40,15 @@ const ItemCount = ({stock,initial, totalItemsCarrito , setTotalItemsCarrito}) =>
                         <Button  className="me-2" variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
                     </ButtonGroup>
                 </Col>
-            </Row>        
+            </Row>    
+             
+           
             <Row style={{ padding: 10 }}>
                 <Col>
-                    <Button variant="dark" size="sm" onClick={AgregarCarrito}>Agregar al carrito</Button>
+                    <Button variant="dark" size="sm" onClick={itemDetail}>Agregar al carrito</Button>
                 </Col>
-            </Row>
+            </Row>   
+                         
         </Container>
     )
 }
