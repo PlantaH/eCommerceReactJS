@@ -1,19 +1,27 @@
-import React , { useState } from 'react'
+import React , { useState, useContext } from 'react'
+
+
 import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+ 
 import ItemCount from "../ItemCount/ItemCount";  
 import './IndexDetail.css'; 
 
-const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
-    
-    const {id,nombre,precio,img,stock,initial,descripcion} = producto
+import { CartContext } from '../../context/CartContext'
+ 
+
+const ItemDetail = ({producto}) => {
+         
+    const {addCartItem} = useContext(CartContext)
+ 
+    const {id,nombre,precio,moneda,img,stock,initial,descripcion} = producto
  
     const [open,setOpen] = useState(true)
  
-    const onAdd = (quantityToAdd) => {         
-        setOpen(false)           
-        setTotalItemsCarrito(parseInt(totalItemsCarrito) + parseInt(quantityToAdd))
+    const onAdd = (quantityToAdd) => {                 
+        setOpen(false)            
+      
+        addCartItem({item: producto, cantidad:quantityToAdd})
     }
 
     return (
@@ -39,7 +47,7 @@ const ItemDetail = ({producto, totalItemsCarrito , setTotalItemsCarrito}) => {
                         </Card.Body>  
 
                         <Card.Body>
-                            <Card.Title className="precioItem">{precio}</Card.Title>                              
+                            <Card.Title className="precioItem">{moneda} {precio}</Card.Title>                              
                         </Card.Body>                        
 
                         

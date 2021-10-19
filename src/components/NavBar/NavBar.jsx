@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
 
 import './NavBar.css';
@@ -7,9 +7,11 @@ import {  Navbar,  Container,  Nav,Form, FormControl, Button} from "react-bootst
 import CartWidget from "../CartWidget/CartWidget";
 import { GiGuitarBassHead } from "react-icons/gi";
 
+import { CartContext } from '../../context/CartContext'
 
+const NavBar = () => {
+  const { totalItemsCarrito } = useContext(CartContext)
 
-const NavBar = ({totalItemsCarrito}) => { 
   const [state, setState] = useState('');
   const handleChange = (e) => {
     !/[aiueo]/.test(e.target.value) && setState(e.target.value);

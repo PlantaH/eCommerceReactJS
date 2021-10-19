@@ -3,7 +3,7 @@ import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
 import './Item.css'; 
 import { Link } from "react-router-dom";
 
-const Item = ({nombreProducto,stock,initial,foto, totalItemsCarrito , setTotalItemsCarrito}) => {
+const Item = ({nombreProducto,foto}) => {
     
     return (
         <Container fluid>

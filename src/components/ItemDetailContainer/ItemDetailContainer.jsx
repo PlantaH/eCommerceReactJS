@@ -6,7 +6,7 @@ import {listaProductos} from '../../data/data.jsx'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import Loader from "react-loader-spinner";
 
-const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
+const ItemDetailContainer = () => {
 
     const {name} = useParams() //para tomar el parametro del link
    
@@ -18,7 +18,7 @@ const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
     const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(item)
-        }, 1000); 
+        }, 100); 
     });
     
     getItem.then((resp) =>  {
@@ -33,9 +33,9 @@ const ItemDetailContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
            {
                 loading
                 ?
-                    <Loader type="Audio" color="red" height={100} width={100} timeout={1000} />
+                    <Loader type="Audio" color="red" height={100} width={100} timeout={100} />
                 :                    
-                    <ItemDetail key={item.id} producto={item} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />
+                    <ItemDetail key={item.id} producto={item}  />
             }              
           
         </div>       

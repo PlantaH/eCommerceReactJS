@@ -7,17 +7,19 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "bajos",
-        precio: "USD 100"
+        precio: "100",
+        moneda: "USD"
     },
     {   id : 1 , 
         nombre :"FENDER CUSTOM SHOP LIMITED P-JAZZ BASS JRN ALPB", 
-        stock:33, 
+        stock:3, 
         initial:1, 
         img :"https://www.todobajos.com/12176-large_default/fender-custom-shop-limited-p-jazz-bass-jrn-alpb.jpg",
         descripcion: "esta es la descripcion",
         home: "N",
         categoria: "bajos",
-        precio: "USD 101"
+        precio: "101",
+        moneda: "USD"
     },
     {   id : 2 , 
         nombre :"MUSIC MAN STINGRAY SPECIAL 4 HH BFR KINGPIN",      
@@ -27,7 +29,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "N",
         categoria: "bajos",
-        precio: "USD 102"
+        precio: "102",
+        moneda: "USD"
     },
     {   id : 3 , 
         nombre :"SANDBERG CALIFORNIA II TT 4 SAN REMO BLUE", 
@@ -37,7 +40,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "N",
         categoria: "bajos",
-        precio: "USD 103"
+        precio: "103",
+        moneda: "USD"
     },
     {   id : 100 , 
         nombre :"Ampeg Rocket Bass RB-210", 
@@ -47,7 +51,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "equipos",
-        precio: "USD 104"
+        precio: "104",
+        moneda: "USD"
     },
     {   id : 200 , 
         nombre :"Darkglass ADAM", 
@@ -57,7 +62,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "efectos",
-        precio: "USD 105"
+        precio: "105",
+        moneda: "USD"
     } ,
     {   id : 201 , 
         nombre :"Aguilar DB599 Bass Compressor", 
@@ -67,7 +73,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "efectos",
-        precio: "USD 113"
+        precio: "113",
+        moneda: "USD"
     } ,
     {   id : 202 , 
         nombre :"Acme Motown DI WB-3", 
@@ -77,7 +84,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "efectos",
-        precio: "USD 73"
+        precio: "73",
+        moneda: "USD"
     } ,
     {   id : 300 , 
         nombre :"Dr String Hi Beams LR5-40", 
@@ -87,7 +95,8 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "S",
         categoria: "accesorios",
-        precio: "USD 106"
+        precio: "106",
+        moneda: "USD"
     } ,
     {   id : 301 , 
         nombre :"Protection Racket 7151 Bass Deluxe", 
@@ -97,6 +106,7 @@ export const listaProductos = [
         descripcion: "esta es la descripcion",
         home: "N",
         categoria: "accesorios",
-        precio: "USD 107"
+        precio: "107",
+        moneda: "USD"
     } 
   ];

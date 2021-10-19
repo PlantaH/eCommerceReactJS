@@ -8,7 +8,7 @@ import Loader from "react-loader-spinner";
 
 import ItemList from "../ItemList/ItemList"; 
 
-const ItemListContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {    
+const ItemListContainer = () => {    
   
     const {name} = useParams() //para tomar el parametro del link
     
@@ -21,7 +21,7 @@ const ItemListContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
         const getProductos = new Promise((resolve,reject) => {
             setTimeout( ()=> {
             resolve(listaProductos)
-            },1000)
+            },500)
         })
 
         const getProductosJSON = async(categoria) =>{
@@ -64,9 +64,9 @@ const ItemListContainer = ({totalItemsCarrito,setTotalItemsCarrito}) => {
             {
                 loading
                 ?
-                    <Loader type="Audio" color="red" height={100} width={100} timeout={1000} />
+                    <Loader type="Audio" color="red" height={100} width={100} timeout={500} />
                 :                    
-                    <ItemList items={productos} nombre={name ? name : "destacados"} totalItemsCarrito={totalItemsCarrito} setTotalItemsCarrito={setTotalItemsCarrito} />    
+                    <ItemList items={productos} nombre={name ? name : "destacados"}  />    
             }     
           
         </>       
