@@ -1,6 +1,7 @@
 
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router';
+import { Carousel} from "react-bootstrap";
 
 import {listaProductos} from '../../data/data.jsx'
 
@@ -61,6 +62,31 @@ const ItemListContainer = () => {
 
     return (        
         <>  
+            
+            <Carousel>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src="https://www.todobajos.com/upload/stowlcarousel/ibanez.jpg"
+                    alt="First slide"
+                    />                    
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src="https://www.todobajos.com/upload/stowlcarousel/sadowsky.png"
+                    alt="Second slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src="https://www.todobajos.com/upload/stowlcarousel/todobajos1.png"
+                    alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
+           
             {
                 loading
                 ?
