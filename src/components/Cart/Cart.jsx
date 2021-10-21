@@ -2,6 +2,8 @@ import React, {useContext} from 'react'
 import {  Container , Row, Col,  Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import { IoTrashBinOutline } from "react-icons/io5"; 
+
 import './Cart.css'; 
 
 import { CartContext } from '../../context/CartContext'
@@ -50,7 +52,7 @@ const Cart = () => {
                                             <Col xs={1}><strong>{ item.item.moneda} {item.cantidad * item.item.precio}</strong></Col>
 
                                             <Col xs={1}>
-                                                <Button onClick={() => removeItem(item.item.id)} variant="danger" size="sm">Borrar</Button>
+                                                <IoTrashBinOutline className="imgDeleteItem"  onClick={() => removeItem(item.item.id)} /> 
                                             </Col>
                                         </Row>   
                                     )                   

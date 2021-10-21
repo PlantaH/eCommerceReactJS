@@ -16,3 +16,14 @@
       color:red;
       font-weight: bolder;
   }
+
+  .imgDeleteItem{
+    size: 3.3em;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+
+  .imgDeleteItem:hover{
+   color:red;
+   font-size: 2rem;
+  }
