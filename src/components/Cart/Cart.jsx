@@ -56,19 +56,19 @@ const Cart = () => {
                                     )                   
                             }  
 
-                            <Row key="0">
+                            <Row>
                                     
-                                        <Col xs={10}>
-                                            
-                                        </Col>
-                    
-                                        
-                                        <Col xs={1} className="totalCarrito">{totalCart()}</Col>
+                                <Col xs={10}>
+                                    
+                                </Col>
+            
+                                
+                                <Col xs={1} className="totalCarrito">{totalCart()}</Col>
 
-                                        <Col xs={1}>
-                                            
-                                        </Col>
-                                    </Row>   
+                                <Col xs={1}>
+                                    
+                                </Col>
+                            </Row>   
 
                             <Row>
                                 <Col xs={12}>
