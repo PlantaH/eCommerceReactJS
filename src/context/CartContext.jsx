@@ -63,7 +63,7 @@ function CartContextProvider({children}){
         });
     }
     
-    const h = () =>{
+    const totalCart = () =>{
         let total = 0    
         cartList.map(item => (total += parseFloat( item.item.precio * item.cantidad )))
         return "USD " + total
@@ -84,7 +84,7 @@ function CartContextProvider({children}){
             addCartItem,
             removeItem,
             clearCart ,
-            h
+            totalCart
         }}>
             {children}
         </CartContext.Provider>

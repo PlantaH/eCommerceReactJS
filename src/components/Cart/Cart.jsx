@@ -8,7 +8,7 @@ import { CartContext } from '../../context/CartContext'
 
 const Cart = () => {
     
-    const { cartList,clearCart,removeItem,h } = useContext(CartContext)
+    const { cartList,clearCart,removeItem,totalCart } = useContext(CartContext)
     
     let  hayItems = false
     if (cartList.length>0)   hayItems = true   
@@ -63,7 +63,7 @@ const Cart = () => {
                                         </Col>
                     
                                         
-                                        <Col xs={1} className="totalCarrito">{h()}</Col>
+                                        <Col xs={1} className="totalCarrito">{totalCart()}</Col>
 
                                         <Col xs={1}>
                                             
