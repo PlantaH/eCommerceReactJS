@@ -15,7 +15,7 @@ const ItemList = memo(
                 
                 <div className="contenedorItems">  
                     <Container fluid>
-                        <Row className="justify-content-md-center">         
+                        <Row>         
                         {                                          
                             items.map(item => <Col><Item key={item.id} nombreProducto={item.nombre} foto={item.img} /></Col>)                    
                         }   
