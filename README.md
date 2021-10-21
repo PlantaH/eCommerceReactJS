@@ -1,3 +1,5 @@
+# install sweetalert
+npm install sweetalert --save
 # Install react-bootstrap
 npm install react-bootstrap@next bootstrap@5.1.1
 # Install react-cons
