@@ -8,7 +8,7 @@ import "./ItemList.css"
 const ItemList = memo( 
     ({nombre,items}) => {        
         return (
-            <div>
+            <>
                 <div className="contenedorTitulo">
                     <h1>{nombre}</h1>
                 </div>
@@ -23,7 +23,7 @@ const ItemList = memo(
                     </Container>                          
                         
                 </div>
-            </div>
+            </>
         )
     }
 , (oldProps, newProps) => oldProps.items.lenght === newProps.items.lenght)
