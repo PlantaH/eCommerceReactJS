@@ -1,13 +1,13 @@
-
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router';
-import { Carousel} from "react-bootstrap";
-
-import {listaProductos} from '../../data/data.jsx'
 
 import Loader from "react-loader-spinner";
 
 import ItemList from "../ItemList/ItemList"; 
+import BannersHome from "../BannersHome/BannersHome";
+import getFirestore  from '../../services/getFirebase';
+ 
+
 
 const ItemListContainer = () => {    
   
@@ -15,77 +15,29 @@ const ItemListContainer = () => {
     
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+       
+        setLoading(true);  
 
-    useEffect(() => {   
-        setLoading(true);    
+        const db = getFirestore()
+       
+        name ? 
+            db.collection('items').where('categoria', '==', name).get()  
+            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )
+        :
+            db.collection('items').get()  
+            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )
         
-        const getProductos = new Promise((resolve,reject) => {
-            setTimeout( ()=> {
-            resolve(listaProductos)
-            },500)
-        })
-
-        const getProductosJSON = async(categoria) =>{
-            try{
-                const result = await getProductos;
-    
-                let result_filtro = result.filter(function(p) { return p.categoria === categoria; });
-    
-                setProductos(result_filtro)        
-    
-                setLoading(false)
-    
-            } catch (error){
-                console.log(error)
-            }
-        } 
-    
-        const getDestacadosJSON = async() =>{
-            try{
-                const result = await getProductos;
-                
-                let result_filtro = result //.filter(function(p) { return p.home === "S"; });
-    
-                setProductos(result_filtro)
-    
-                setLoading(false)
-            } catch (error){
-                console.log(error)
-            }
-        } 
-    
         
-        name ? getProductosJSON(name) :  getDestacadosJSON()        
-
-    } , [name]);
-
+        setLoading(false)
+ 
+    }, [name])
+ 
 
     return (        
         <>  
-            
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://www.todobajos.com/upload/stowlcarousel/ibanez.jpg"
-                    alt="First slide"
-                    />                    
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://www.todobajos.com/upload/stowlcarousel/sadowsky.png"
-                    alt="Second slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://www.todobajos.com/upload/stowlcarousel/todobajos1.png"
-                    alt="Third slide"
-                    />
-                </Carousel.Item>
-            </Carousel>
+            { !name  &&  <BannersHome></BannersHome>  }
            
             {
                 loading

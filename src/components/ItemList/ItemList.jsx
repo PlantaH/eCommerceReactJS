@@ -1,12 +1,11 @@
-import React,{memo}  from 'react' 
+import React from 'react' 
 
 import { Container, Row, Col } from "react-bootstrap";
 import Item from "../Item/Item";
 
 import "./ItemList.css"
 
-const ItemList = memo( 
-    ({nombre,items}) => {        
+const ItemList =  ({nombre,items}) => {        
         return (
             <>
                 <div className="contenedorTitulo">
@@ -26,6 +25,6 @@ const ItemList = memo(
             </>
         )
     }
-, (oldProps, newProps) => oldProps.items.lenght === newProps.items.lenght)
+ 
 
 export default ItemList

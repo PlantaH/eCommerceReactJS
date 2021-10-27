@@ -1,3 +1,5 @@
+# instal firebase
+npm install firebase
 # install sweetalert
 npm install sweetalert --save
 # Install react-bootstrap

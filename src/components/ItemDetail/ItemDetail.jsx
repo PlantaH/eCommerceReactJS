@@ -11,11 +11,13 @@ import { CartContext } from '../../context/CartContext'
  
 
 const ItemDetail = ({producto}) => {
-         
+      
+    console.log(producto); 
+
     const {addCartItem} = useContext(CartContext)
  
     const {id,nombre,precio,moneda,img,stock,initial,descripcion} = producto
- 
+    
     const [open,setOpen] = useState(true)
  
     const onAdd = (quantityToAdd) => {                 
