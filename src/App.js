@@ -14,6 +14,7 @@ import Footer from './screens/Footer/Footer'
 import Error404 from './screens/Error404/Error404'
 
 import CartContextProvider from './context/CartContext'
+import CartCheckOut from './components/CartCheckOut/CartCheckOut';
  
 function App() {   
   return (      
@@ -37,6 +38,9 @@ function App() {
                       <Route exact path="/cart">
                         <Cart />
                       </Route>
+                      <Route exact path="/checkout">
+                        <CartCheckOut />
+                      </Route>                      
                       <Route exact path="*">
                         <Error404 />
                       </Route>

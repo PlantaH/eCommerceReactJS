@@ -20,9 +20,8 @@ const ItemDetailContainer = () => {
         
         db.collection('items').where('nombre', '==', name).get()  
         .then(resp => setItem(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )
- 
-        setLoading(false) 
-        
+        .catch(err => console.log(err))
+        .finally( ()=> setLoading(false)  )
     }, [name])
 
 

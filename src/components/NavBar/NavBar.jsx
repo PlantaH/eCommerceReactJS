@@ -46,10 +46,10 @@ const NavBar = () => {
             </Link>
           </Nav.Link>    
         </Nav>
-        <Form className="d-flex">
-            <FormControl onChange={handleChange}  type="search" placeholder="Search" className="mr-2" aria-label="Search" value={state}/>
-            <Button variant="outline-success">Search</Button>
-        </Form>
+       <Form className="d-flex">
+            <FormControl onChange={handleChange}  type="search" placeholder="Buscar producto" className="mr-2" aria-label="Search" value={state}/>
+            <Button variant="outline-success">Buscar</Button>
+        </Form>       
       </Navbar.Collapse>
     </Container>    
   </Navbar>     

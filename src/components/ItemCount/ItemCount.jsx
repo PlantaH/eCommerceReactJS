@@ -30,8 +30,10 @@ const ItemCount = ({stock,initial,onAdd}) => {
     return (        
         <Container>
            
+           { stock > 0 &&
             <Row>
-                <Col>
+                <Col>   
+               
                     <ButtonGroup aria-label="Basic example">
                         <Button  variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
                         <InputGroup>
@@ -39,15 +41,26 @@ const ItemCount = ({stock,initial,onAdd}) => {
                         </InputGroup>
                         <Button  className="me-2" variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
                     </ButtonGroup>
+                          
                 </Col>
-            </Row>    
-             
-           
+            </Row> 
+            }
+            
+            { stock > 0 
+            ?   
             <Row style={{ padding: 10 }}>
                 <Col>
                     <Button variant="dark" size="sm" onClick={itemDetail}>Agregar al carrito</Button>
                 </Col>
-            </Row>   
+            </Row>
+            :
+            <Row style={{ padding: 10 }}>
+                <Col>
+                    <Button variant="danger" size="sm">No hay stock</Button>
+                </Col>
+            </Row>
+            }     
+           
                          
         </Container>
     )

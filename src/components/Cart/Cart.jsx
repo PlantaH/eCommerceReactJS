@@ -7,14 +7,17 @@ import { IoTrashBinOutline } from "react-icons/io5";
 import './Cart.css'; 
 
 import { CartContext } from '../../context/CartContext'
+ 
+import 'firebase/firestore' 
+
 
 const Cart = () => {
-    
+     
+
     const { cartList,clearCart,removeItem,totalCart } = useContext(CartContext)
     
     let  hayItems = false
     if (cartList.length>0)   hayItems = true   
-   
     
     return (
         <>
@@ -72,17 +75,22 @@ const Cart = () => {
                                 </Col>
                             </Row>   
 
-                            <Row>
-                                <Col xs={12}>
-                                    <Button onClick={clearCart}>Vaciar Carrito</Button>
+                            <Row style={{'padding-top':'3rem'}}> 
+                                <Col xs={6} className="d-flex justify-content-start">
+                                    <Button  variant="danger" onClick={clearCart}>Vaciar Carrito</Button>
+                                </Col>
+                                <Col xs={6} className="d-flex justify-content-end">                                   
+                                    <Link to={`/checkout`}> <Button  variant="info">Comprar</Button></Link>
                                 </Col>
                             </Row>
+ 
                     </Container>
+                   
                 :
                     <Container fluid className="carrito">   
                          <Row>
                             <Col xs={12}>
-                                 <Link to={`/`}><Button variant="dark" size="sm">No hay items, tenes que agregar al carrito</Button></Link>
+                                 <Link to={`/`}><Button variant="info" size="sm">No hay items, tenes que agregar al carrito</Button></Link>
                             </Col>
                         </Row>     
                     </Container>

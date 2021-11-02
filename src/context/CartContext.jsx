@@ -84,7 +84,8 @@ function CartContextProvider({children}){
             addCartItem,
             removeItem,
             clearCart ,
-            totalCart
+            totalCart,
+            setCartList
         }}>
             {children}
         </CartContext.Provider>

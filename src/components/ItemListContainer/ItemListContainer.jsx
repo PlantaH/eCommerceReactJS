@@ -24,13 +24,14 @@ const ItemListContainer = () => {
        
         name ? 
             db.collection('items').where('categoria', '==', name).get()  
-            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )
+            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )  
+            .catch(err => console.log(err))           
+            .finally( ()=> setLoading(false)  )
         :
             db.collection('items').get()  
-            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )
-        
-        
-        setLoading(false)
+            .then(resp => setProductos(resp.docs.map(it => ({id: it.id, ...it.data() }) )) )  
+            .catch(err => console.log(err))           
+            .finally( ()=> setLoading(false)  )
  
     }, [name])
  
