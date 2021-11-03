@@ -28,7 +28,7 @@ const CartCheckOut = () => {
    
         const generarOrden = (e) =>{       
             e.preventDefault()
-            if (formData.email != formData.email_confirma){
+            if (formData.email !== formData.email_confirma){
                 setValmail(true)
                 return false
             }
