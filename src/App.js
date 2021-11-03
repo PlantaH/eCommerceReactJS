@@ -8,6 +8,7 @@ import './App.css';
 import NavBar from "./components/NavBar/NavBar" 
 import Cart from './components/Cart/Cart'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Search from './components/Search/Search'
 import Detail from './components/Detail/Detail'
 
 import Footer from './screens/Footer/Footer'
@@ -31,6 +32,9 @@ function App() {
                       </Route>
                       <Route exact path="/list/:name">
                         <ItemListContainer />
+                      </Route>
+                      <Route exact path="/search/:name">
+                        <Search />
                       </Route>
                       <Route exact path="/detail/:name">
                         <Detail/>

@@ -1,14 +1,11 @@
 import React , { useState, useContext } from 'react'
-
-
-import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
- 
-import ItemCount from "../ItemCount/ItemCount";  
-import './IndexDetail.css'; 
-
+import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
 import { CartContext } from '../../context/CartContext'
  
+import ItemCount from "../ItemCount/ItemCount";  
+
+import './IndexDetail.css'; 
 
 const ItemDetail = ({producto}) => {
       
@@ -21,8 +18,7 @@ const ItemDetail = ({producto}) => {
     const [open,setOpen] = useState(true)
  
     const onAdd = (quantityToAdd) => {                 
-        setOpen(false)            
-      
+        setOpen(false)  
         addCartItem({item: producto, cantidad:quantityToAdd})
     }
 
@@ -33,8 +29,7 @@ const ItemDetail = ({producto}) => {
                      <Card className="text-center itemDetailTarjeta">
                         <Card.Body>
                             <Card.Title className="tituloItem">{nombre}</Card.Title>                             
-                        </Card.Body>  
-                         
+                        </Card.Body>                           
                         <Container fluid>
                             <Row>
                                 <Col className="m-auto">
@@ -42,31 +37,23 @@ const ItemDetail = ({producto}) => {
                                 </Col>
                             </Row>
                         </Container>
-
                         <Card.Body>
                             <Card.Title className="descripcionTituloItem">Descripcion</Card.Title>
                             <Card.Title className="descripcionItem">{descripcion}</Card.Title>                             
                         </Card.Body>  
-
                         <Card.Body>
                             <Card.Title className="precioItem">{moneda} {precio}</Card.Title>                              
-                        </Card.Body>                        
-
-                        
-                            {open  ? 
-                                <ItemCount key={id} stock={stock} initial={initial} onAdd={onAdd}  />
-                            :
-                                <div className="cont-Botones">
-                                     <Link to={`/cart`}><Button variant="dark" size="sm">Ir al carrito</Button></Link>  <Link to={`/`}><Button variant="dark" size="sm">Seguir comprando</Button></Link>
-                                </div>                           
-                            }  
-                        
-
+                        </Card.Body> 
+                        {open  ? 
+                            <ItemCount key={id} stock={stock} initial={initial} onAdd={onAdd}  />
+                        :
+                            <div className="cont-Botones">
+                                    <Link to={`/cart`}><Button variant="dark" size="sm">Ir al carrito</Button></Link>  <Link to={`/`}><Button variant="dark" size="sm">Seguir comprando</Button></Link>
+                            </div>                           
+                        }  
                      </Card>
                 </Col>
             </Row>
-
-            
         </Container>
     )
 }

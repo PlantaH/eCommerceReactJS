@@ -11,19 +11,17 @@ function CartContextProvider({children}){
     const addCartItem = (item) =>{  
         const {id} = item.item
         const {cantidad} = item
-        
+               
         setTotalItemsCarrito(totalItemsCarrito + cantidad)
         
         if (!isInCart(id)) {
             setCartList([...cartList, item ]) 
         }else{            
             cartList.find(prod => prod.item.id === id).cantidad += cantidad;         
-        }
-        
+        }      
+       
     }
 
-    
-    
     const removeItem = (itemId) =>{
         swal({
             title: "¿Queres borrar el producto?",      
@@ -69,14 +67,10 @@ function CartContextProvider({children}){
         return "USD " + total
     }
     
-    
-
     const isInCart = (itemId) =>{         
         return cartList.some( (prod) => prod.item.id === itemId)
     } 
     
-   
-
     return(
         <CartContext.Provider value={{
             cartList,           

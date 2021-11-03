@@ -5,5 +5,6 @@
 .contenedorTitulo{
     margin-top: 1rem;
     margin-left: 2.5rem;
-    text-transform:uppercase;
+    text-transform: capitalize; 
+    font-size: 2rem; 
 }

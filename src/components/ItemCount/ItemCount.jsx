@@ -2,24 +2,19 @@ import React , { useState, useEffect } from 'react'
 import {  Container , Row, Col, Button,  ButtonGroup, InputGroup} from "react-bootstrap";
 import './ItemCount.css';
  
-
-
-const ItemCount = ({stock,initial,onAdd}) => {
-    
+const ItemCount = ({stock,initial,onAdd}) => {    
     const [stockInicial, setStockInicial] = useState(initial)
 
     const[disabledAdd, setDisabledAdd] = useState(false)
     const[disabledRes, setDisabledRes] = useState(false)
-    
-   
-    
+        
     const AddItem = (valor) => {       
-       setStockInicial(parseInt(stockInicial) + parseInt(valor))      
-    }
+        setStockInicial(parseInt(stockInicial) + parseInt(valor))      
+     }
     
     useEffect(() => {
-        stockInicial  === stock ? setDisabledAdd(true) : setDisabledAdd(false)
-        stockInicial  === 0 ? setDisabledRes(true) : setDisabledRes(false) 
+        parseInt(stockInicial)  === parseInt(stock) ? setDisabledAdd(true) : setDisabledAdd(false)
+        stockInicial  === 1 ? setDisabledRes(true) : setDisabledRes(false) 
     },[stockInicial,stock] )
 
     const itemDetail = () =>{
@@ -28,20 +23,17 @@ const ItemCount = ({stock,initial,onAdd}) => {
     }
      
     return (        
-        <Container>
-           
+        <Container>           
            { stock > 0 &&
             <Row>
-                <Col>   
-               
+                <Col>                  
                     <ButtonGroup aria-label="Basic example">
                         <Button  variant="secondary" size="sm" onClick={() => AddItem(-1)} disabled={disabledRes}>-</Button >
                         <InputGroup>
-                            <InputGroup.Text id="btnGroupAddon">{stockInicial}</InputGroup.Text>
+                            <InputGroup.Text id="btnGroupAddon">{stockInicial} </InputGroup.Text>
                         </InputGroup>
                         <Button  className="me-2" variant="secondary" size="sm" onClick={() => AddItem(1)} disabled={disabledAdd}>+</Button >
-                    </ButtonGroup>
-                          
+                    </ButtonGroup>                          
                 </Col>
             </Row> 
             }
@@ -59,9 +51,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
                     <Button variant="danger" size="sm">No hay stock</Button>
                 </Col>
             </Row>
-            }     
-           
-                         
+            }            
         </Container>
     )
 }
