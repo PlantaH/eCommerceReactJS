@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     }, [name])  
 
     useEffect(() => {       
-        setShowProductos(productos) 
+        setShowProductos([...productos]) 
         setPrecioLimite(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
      }, [productos])  
     
