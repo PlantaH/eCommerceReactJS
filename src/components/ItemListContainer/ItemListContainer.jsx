@@ -10,7 +10,7 @@ import getFirestore  from '../../services/getFirebase';
 const ItemListContainer = () => {  
     const {name} = useParams() //para tomar el parametro del link
     const [loading, setLoading] = useState(true)
-    const [productosAll, setProductosAll] = useState([])
+ 
     const [productos, setProductos] = useState([])
     const [precioLimite,setPrecioLimite] = useState(0)    
 

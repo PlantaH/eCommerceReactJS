@@ -1,5 +1,4 @@
-import React,{useState,useEffect} from 'react'
-
+import React,{useState} from 'react'
 
 const Filter = ({nuevo,setNuevo,precioLimite,setMaxPrice}) => {
     
