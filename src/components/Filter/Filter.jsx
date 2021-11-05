@@ -20,7 +20,7 @@ const Filter = ({nuevo,setNuevo,precioLimite,setMaxPrice}) => {
       <section className="mb-4">
         <h6 className="font-weight-bold mb-3">Estado</h6>
         <div className="form-check pl-0 mb-3">
-          <input type="checkbox" className="form-check-input filled-in" id="new" onClick={checkNuevo} checked={nuevo}/>
+          <input type="checkbox" className="form-check-input filled-in" id="new" onChange={checkNuevo} checked={nuevo}/>
           <label className="form-check-label small text-uppercase card-link-secondary" for="new">Ver solo nuevos</label>
         </div>
       </section>
