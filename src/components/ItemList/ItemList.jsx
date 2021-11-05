@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Container, Row, Col } from "react-bootstrap";
 import Item from "../Item/Item";
-
+import Filter from "../Filter/Filter"; 
 import "./ItemList.css"
 
-const ItemList =  ({nombre,items}) => {        
+const ItemList =  ({nombre,items,nuevo,setNuevo,precioLimite,setMaxPrice}) => {        
     return (
         <>
             <div className="contenedorTitulo">
@@ -13,12 +13,22 @@ const ItemList =  ({nombre,items}) => {
             </div>                
             <div className="contenedorItems">  
                 <Container fluid>
-                    <Row>         
-                    {                                          
-                        items.map(item => <Col key={item.id}><Item key={item.id} nombreProducto={item.nombre} foto={item.img} /></Col>)                    
-                    }   
+                    <Row>
+                        {  
+                         nombre !== "destacados"  &&  <Col xs={2}><Filter setNuevo={setNuevo} nuevo={nuevo} precioLimite={precioLimite} setMaxPrice={setMaxPrice} /></Col> 
+                        }
+                        
+                        <Col>
+                            <Container fluid>
+                                <Row>                                 
+                                {                                          
+                                    items.map(item => <Col key={item.id}><Item key={item.id} nombreProducto={item.nombre} foto={item.img}  precio={item.precio} moneda={item.moneda} estado={item.home} /></Col>)                    
+                                }   
+                                </Row>
+                            </Container>  
+                        </Col>
                     </Row>
-                </Container>                                              
+                </Container>                                             
             </div>
         </>
     )

@@ -22,3 +22,17 @@
 .tarjetaBoton:hover{
     background-color: darkgray;
  }
+
+ .precioItem{
+     color:red !important;  
+     font-size:1.5rem !important;
+ }
+
+ .estadoNuevo{
+    color:green !important;  
+    font-size:1.5rem !important;
+}
+.estadoUsado{
+    color:blue !important;  
+    font-size:1.5rem !important;
+}

@@ -1,22 +1,15 @@
 import React , { useState, useContext } from 'react'
 import { Link } from "react-router-dom";
-import {  Container , Row, Col,  Card, Button} from "react-bootstrap";
-import { CartContext } from '../../context/CartContext'
- 
+import { Container , Row, Col,  Card, Button} from "react-bootstrap";
+import { CartContext } from '../../context/CartContext' 
 import ItemCount from "../ItemCount/ItemCount";  
-
 import './IndexDetail.css'; 
 
-const ItemDetail = ({producto}) => {
-      
-    console.log(producto); 
-
-    const {addCartItem} = useContext(CartContext)
- 
+const ItemDetail = ({producto}) => {      
+    const {addCartItem} = useContext(CartContext) 
     const {id,nombre,precio,moneda,img,stock,initial,descripcion} = producto
-    
     const [open,setOpen] = useState(true)
- 
+
     const onAdd = (quantityToAdd) => {                 
         setOpen(false)  
         addCartItem({item: producto, cantidad:quantityToAdd})
