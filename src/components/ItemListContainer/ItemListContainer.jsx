@@ -17,7 +17,7 @@ const ItemListContainer = () => {
     const [nuevo,setNuevo] = useState()   
     const [maxPrice,setMaxPrice] = useState(0)     
     
-    const [state, dispatch] = useReducer(reducer, 0)
+    const [state, dispatch] = useReducer(reducer, 0) 
       
     useEffect(() => {  
         setNuevo(false)             
@@ -35,23 +35,13 @@ const ItemListContainer = () => {
     useEffect(() => {               
         setShowProductos([...productos]) 
         setPrecioLimite(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
+        setMaxPrice(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
     }, [productos])  
     
-   /* useEffect(() => {           
-       nuevo ? setShowProductos(productos.filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos) 
-    }, [nuevo]) */
-
-   /* useEffect(() => {             
-        setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) ))
-    }, [maxPrice])  */
-    
-
-   
-
-    function reducer() {        
-        
-        nuevo ? setShowProductos(productos.filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos)       
+    function reducer() {  
+        nuevo ? setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) ).filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) )) 
     }
+     
 
     return (        
         <>  
@@ -61,7 +51,7 @@ const ItemListContainer = () => {
                 ?
                     <Loader type="Audio" color="red" height={100} width={100} timeout={500} />
                 :  
-                    <ItemList state={state} dispatch={dispatch} items={showProductos} nombre={name ? name : "destacados"} nuevo={nuevo} setNuevo={setNuevo} maxPrice={maxPrice} setMaxPrice={setMaxPrice} precioLimite={precioLimite} /> 
+                    <ItemList state={state}  dispatch={dispatch}   items={showProductos} nombre={name ? name : "destacados"} nuevo={nuevo} setNuevo={setNuevo} maxPrice={maxPrice} setMaxPrice={setMaxPrice} precioLimite={precioLimite} /> 
             }               
         </>       
     )

@@ -1,19 +1,18 @@
 import React,{useState} from 'react'
 
-const Filter = ({dispatch,nuevo,setNuevo,precioLimite,setMaxPrice}) => {
-    
+const Filter = ({dispatch,nuevo,setNuevo,precioLimite,setMaxPrice}) => {    
   const [filterValue,setFilterValue] = useState(precioLimite)  
   const [filterSel,setFilterSel] = useState(precioLimite)  
-
+  
   const checkNuevo = (e) =>{   
       setNuevo(e.target.checked)
       dispatch()                
   } 
-
   const changePrice = (e) =>{              
-    setMaxPrice(e.target.value)
-    setFilterValue(e.target.value)
-    setFilterSel(e.target.value);
+      setMaxPrice(e.target.value)
+      setFilterValue(e.target.value)
+      setFilterSel(e.target.value)
+      dispatch()    
   }
     
   return (      
