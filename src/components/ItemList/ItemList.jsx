@@ -5,7 +5,7 @@ import Item from "../Item/Item";
 import Filter from "../Filter/Filter"; 
 import "./ItemList.css"
 
-const ItemList =  ({dispatch,nombre,items,nuevo,setNuevo,precioLimite,setMaxPrice}) => {        
+const ItemList =  ({dispatch,nombre,items,filtroNuevo,setFiltroNuevo,precioMaximo,setMaxPrice}) => {        
     return (
         <>
             <div className="contenedorTitulo">
@@ -15,7 +15,7 @@ const ItemList =  ({dispatch,nombre,items,nuevo,setNuevo,precioLimite,setMaxPric
                 <Container fluid>
                     <Row>
                         {  
-                         nombre !== "destacados"  &&  <Col xs={2}><Filter dispatch={dispatch}  setNuevo={setNuevo} nuevo={nuevo} precioLimite={precioLimite} setMaxPrice={setMaxPrice} /></Col> 
+                         nombre !== "destacados"  &&  <Col xs={2}><Filter dispatch={dispatch}  setFiltroNuevo={setFiltroNuevo} filtroNuevo={filtroNuevo} precioMaximo={precioMaximo} setMaxPrice={setMaxPrice} /></Col> 
                         }
                         
                         <Col>

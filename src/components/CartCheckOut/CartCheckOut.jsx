@@ -3,6 +3,7 @@ import { Container , Row, Col,  Button ,Form} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from '../../context/CartContext'
 import Loader from "react-loader-spinner";
+import swal from 'sweetalert';
 import firebase from 'firebase/compat/app'
 import 'firebase/firestore'
 import getFirestore  from '../../services/getFirebase';
@@ -23,54 +24,71 @@ const CartCheckOut = () => {
     let  hayItems = false
     if (cartList.length>0) hayItems = true   
    
+ 
     const generarOrden = (e) =>{       
         e.preventDefault()
         if (formData.email !== formData.email_confirma){
             setValmail(true)
             return false
         }
-        setComprando(true)        
-        let orden = {}
-        orden.date = firebase.firestore.Timestamp.fromDate(new Date());    
-        orden.buyer = formData
-        orden.total = totalCart();
-        orden.items = cartList.map(cartItem => {
-            const id = cartItem.item.id;
-            const nombre = cartItem.item.nombre;
-            const precio = cartItem.item.precio;           
-            const cantidad = cartItem.cantidad;            
-            return {id, nombre, precio, cantidad}   
+
+        swal({
+            title: "¿Confirmas la compra?",      
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
+        .then((willDelete) => {
+            if (willDelete) {
                 
-        const db = getFirestore();
-        const ordersCol = db.collection('orders');
-        ordersCol.add(orden)
-        .then((IdDocumento)=>{
-            setOrdenid(IdDocumento.id)
-        })
-        .catch( err => {
-            setOrdenid('No se pudo procesar la compra')
-        })
-        .finally(()=>{
-            setCartList([])
-            setFormData({nombre: '',email: '',email_confirma: '',telefono: ''})               
-        })
-    
-        const itemsToUpdate = db.collection('items').where(
-            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.item.id)
-        )    
-        const batch = db.batch();         
-        itemsToUpdate.get()
-        .then( collection=>{
-            collection.docs.forEach(docSnapshot => {
-                batch.update(docSnapshot.ref, {
-                    stock: docSnapshot.data().stock - cartList.find(item => item.item.id === docSnapshot.id).cantidad
+                setComprando(true)        
+                let orden = {}
+                orden.date = firebase.firestore.Timestamp.fromDate(new Date());    
+                orden.buyer = formData
+                orden.total = totalCart();
+                orden.items = cartList.map(cartItem => {
+                    const id = cartItem.item.id;
+                    const nombre = cartItem.item.nombre;
+                    const precio = cartItem.item.precio;           
+                    const cantidad = cartItem.cantidad;            
+                    return {id, nombre, precio, cantidad}   
                 })
-            })    
-            batch.commit().then(res =>{
-                setCompraFinalizada(true)
-            })
-         })        
+                        
+                const db = getFirestore();
+                const ordersCol = db.collection('orders');
+                ordersCol.add(orden)
+                .then((IdDocumento)=>{
+                    setOrdenid(IdDocumento.id)
+                })
+                .catch( err => {
+                    setOrdenid('No se pudo procesar la compra')
+                })
+                .finally(()=>{
+                    setCartList([])
+                    setFormData({nombre: '',email: '',email_confirma: '',telefono: ''})               
+                })
+            
+                const itemsToUpdate = db.collection('items').where(
+                    firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.item.id)
+                )    
+                const batch = db.batch();         
+                itemsToUpdate.get()
+                .then( collection=>{
+                    collection.docs.forEach(docSnapshot => {
+                        batch.update(docSnapshot.ref, {
+                            stock: docSnapshot.data().stock - cartList.find(item => item.item.id === docSnapshot.id).cantidad
+                        })
+                    })    
+                    batch.commit().then(res =>{
+                        setCompraFinalizada(true)
+                    })
+                 })   
+
+                 
+            } 
+        });
+
+            
          
     }
     

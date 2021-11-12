@@ -12,15 +12,15 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
     const [showProductos, setShowProductos] = useState([])
-    const [precioLimite,setPrecioLimite] = useState(0)    
 
-    const [nuevo,setNuevo] = useState()   
+    const [precioMaximo,setPrecioMaximo] = useState(0)   
+    const [filtroNuevo,setFiltroNuevo] = useState()   
     const [maxPrice,setMaxPrice] = useState(0)     
     
     const [state, dispatch] = useReducer(reducer, 0) 
       
     useEffect(() => {  
-        setNuevo(false)             
+        setFiltroNuevo(false)             
         setLoading(true)
         
         const db = getFirestore()
@@ -34,15 +34,14 @@ const ItemListContainer = () => {
 
     useEffect(() => {               
         setShowProductos([...productos]) 
-        setPrecioLimite(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
+        setPrecioMaximo(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
         setMaxPrice(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
     }, [productos])  
     
     function reducer() {  
-        nuevo ? setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) ).filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) )) 
+        filtroNuevo ? setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) ).filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) )) 
     }
-     
-
+    
     return (        
         <>  
             { !name  &&  <BannersHome></BannersHome>  }           
@@ -51,7 +50,7 @@ const ItemListContainer = () => {
                 ?
                     <Loader type="Audio" color="red" height={100} width={100} timeout={500} />
                 :  
-                    <ItemList state={state}  dispatch={dispatch}   items={showProductos} nombre={name ? name : "destacados"} nuevo={nuevo} setNuevo={setNuevo} maxPrice={maxPrice} setMaxPrice={setMaxPrice} precioLimite={precioLimite} /> 
+                    <ItemList state={state}  dispatch={dispatch}   items={showProductos} nombre={name ? name : "destacados"} filtroNuevo={filtroNuevo} setFiltroNuevo={setFiltroNuevo} maxPrice={maxPrice} setMaxPrice={setMaxPrice} precioMaximo={precioMaximo} /> 
             }               
         </>       
     )
