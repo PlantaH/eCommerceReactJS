@@ -48,9 +48,9 @@ const ItemListContainer = () => {
         filtroNuevo ? setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) ).filter(prod => prod.home.toUpperCase() === 'S' )) : setShowProductos(productos.filter(prod => parseFloat(prod.precio) <= parseFloat(maxPrice) )) 
     }
     
-    let titleSection = 'Destacados'
+    let titleSection = 'destacados'
     if (name) titleSection = name
-    if (filterByProduct) titleSection = 'Tu busqueda'
+    if (filterByProduct) titleSection = 'tu busqueda'
 
     return (        
         <>  

@@ -15,7 +15,7 @@ const ItemList =  ({dispatch,nombre,items,filtroNuevo,setFiltroNuevo,precioMaxim
                 <Container fluid>
                     <Row>
                         {  
-                         nombre !== "destacados"  &&  <Col xs={2}><Filter dispatch={dispatch}  setFiltroNuevo={setFiltroNuevo} filtroNuevo={filtroNuevo} precioMaximo={precioMaximo} setMaxPrice={setMaxPrice} /></Col> 
+                         nombre.toLowerCase() !== "destacados"  &&  <Col xs={2}><Filter dispatch={dispatch}  setFiltroNuevo={setFiltroNuevo} filtroNuevo={filtroNuevo} precioMaximo={precioMaximo} setMaxPrice={setMaxPrice} /></Col> 
                         }
                         
                         <Col>

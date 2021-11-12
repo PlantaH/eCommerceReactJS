@@ -19,6 +19,16 @@ const NavBar = () => {
     e.preventDefault()
   };
 
+  const enterPressed = (e) => {
+   
+    var code = e.keyCode || e.which;
+    if(code === 13) { //13 is the enter keycode
+      e.preventDefault() 
+      return false
+    } 
+}
+
+
   return (     
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="miEstilo">
     <Container>
@@ -49,7 +59,7 @@ const NavBar = () => {
           </Nav.Link>    
         </Nav>
        <Form className="d-flex">
-            <FormControl onChange={handleChange}  type="text" placeholder="Buscar producto" className="mr-2" aria-label="Search" value={search}/>
+            <FormControl onChange={handleChange} onKeyPress={enterPressed.bind()} type="text" placeholder="Buscar producto" className="mr-2" aria-label="Search" value={search}/>
             <Link to={`/search/`+ search}><Button variant="outline-success">Buscar</Button></Link>
         </Form>       
       </Navbar.Collapse>
