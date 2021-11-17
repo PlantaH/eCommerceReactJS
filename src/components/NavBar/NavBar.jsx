@@ -19,10 +19,9 @@ const NavBar = () => {
     e.preventDefault()
   };
 
-  const enterPressed = (e) => {
-   
+  const enterPressed = (e) => {   
     var code = e.keyCode || e.which;
-    if(code === 13) { //13 is the enter keycode
+    if(code === 13) {  
       e.preventDefault() 
       return false
     } 

@@ -80,7 +80,7 @@ function CartContextProvider({children}){
             clearCart ,
             totalCart,
             setCartList
-        }}>
+            }}>
             {children}
         </CartContext.Provider>
     )

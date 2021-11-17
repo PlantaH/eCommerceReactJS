@@ -23,15 +23,13 @@ const CartCheckOut = () => {
    
     let  hayItems = false
     if (cartList.length>0) hayItems = true   
-   
- 
+    
     const generarOrden = (e) =>{       
         e.preventDefault()
         if (formData.email !== formData.email_confirma){
             setValmail(true)
             return false
         }
-
         swal({
             title: "¿Confirmas la compra?",      
             icon: "warning",
@@ -39,8 +37,7 @@ const CartCheckOut = () => {
             dangerMode: true,
         })
         .then((willDelete) => {
-            if (willDelete) {
-                
+            if (willDelete) {                
                 setComprando(true)        
                 let orden = {}
                 orden.date = firebase.firestore.Timestamp.fromDate(new Date());    
@@ -82,16 +79,10 @@ const CartCheckOut = () => {
                     batch.commit().then(res =>{
                         setCompraFinalizada(true)
                     })
-                 })   
-
-                 
+                 })                    
             } 
-        });
-
-            
-         
-    }
-    
+        });         
+    }    
     return (
         <>
             <div className="contenedorTitulo">{compraFinalizada ? <h1>Compra Finalizada</h1> : <h1>Finalizar compra</h1>}</div>

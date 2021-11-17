@@ -13,7 +13,7 @@ const Filter = ({dispatch,filtroNuevo,setFiltroNuevo,precioMaximo,setMaxPrice}) 
       setMaxPrice(e.target.value)           
       dispatch()    
   }
-    
+  
   return (      
     <section>    
       <section className="mb-4">
