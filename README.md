@@ -1,10 +1,10 @@
 # eCommerce Bajo Mundo by Hernán Dupuy
 ## REACT-JS CoderHouse - 2021
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://bajomundo.netlify.app/) 
+ 
 
 ![N|Solid](https://shields-staging.herokuapp.com/badge/React-JS-green)
 
+https://shields-staging.herokuapp.com/badge/URL-https%3A%2F%2Fbajomundo.netlify.app%2F-blue(https://bajomundo.netlify.app/) 
 
 # instal firebase
 npm install firebase
