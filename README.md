@@ -2,6 +2,7 @@
 ## REACT-JS CoderHouse - 2021
  
 
+![N|Solid](https://shields-staging.herokuapp.com/badge/npm-v6.14.15-orange)
 ![N|Solid](https://shields-staging.herokuapp.com/badge/React-JS-green)
 ![N|Solid](https://shields-staging.herokuapp.com/badge/URL-https%3A%2F%2Fbajomundo.netlify.app%2F-blue) (https://bajomundo.netlify.app/) 
 
