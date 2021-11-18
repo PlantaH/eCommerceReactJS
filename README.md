@@ -3,8 +3,7 @@
  
 
 ![N|Solid](https://shields-staging.herokuapp.com/badge/React-JS-green)
-
-https://shields-staging.herokuapp.com/badge/URL-https%3A%2F%2Fbajomundo.netlify.app%2F-blue(https://bajomundo.netlify.app/) 
+![N|Solid](https://shields-staging.herokuapp.com/badge/URL-https%3A%2F%2Fbajomundo.netlify.app%2F-blue) (https://bajomundo.netlify.app/) 
 
 # instal firebase
 npm install firebase
