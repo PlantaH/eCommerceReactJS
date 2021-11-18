@@ -3,7 +3,8 @@
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://bajomundo.netlify.app/) 
 
-(https://shields-staging.herokuapp.com/badge/React-JS-green)
+[![N|Solid](https://shields-staging.herokuapp.com/badge/React-JS-green)]
+
 
 # instal firebase
 npm install firebase
