@@ -13,25 +13,27 @@ const ItemList =  ({dispatch,nombre,items,filtroNuevo,setFiltroNuevo,precioMaxim
             </div>                
             <div className="contenedorItems">                 
                 <Container fluid>
-                    {items.length >0
-                    ?
+                   
                         <Row>
                             {  
                             nombre.toLowerCase() !== "destacados"  &&  <Col xs={2}><Filter dispatch={dispatch}  setFiltroNuevo={setFiltroNuevo} filtroNuevo={filtroNuevo} precioMaximo={precioMaximo} setMaxPrice={setMaxPrice} /></Col> 
                             }                        
                             <Col>
-                                <Container fluid>
-                                    <Row>                                 
-                                    {                                          
-                                        items.map(item => <Col key={item.id}><Item key={item.id} nombreProducto={item.nombre} foto={item.img}  precio={item.precio} moneda={item.moneda} estado={item.home} /></Col>)                    
-                                    }   
-                                    </Row>
-                                </Container>  
+                                 
+                                    <Container fluid>
+                                        <Row>                                 
+                                        {items.length >0                                       
+                                         ?
+                                            items.map(item => <Col key={item.id}><Item key={item.id} nombreProducto={item.nombre} foto={item.img}  precio={item.precio} moneda={item.moneda} estado={item.home} /></Col>)                    
+                                        :
+                                            <>No encontramos lo que buscas </>
+                                        }   
+                                        </Row>
+                                    </Container> 
+                                     
                             </Col>
                         </Row>
-                    :
-                        <Row>  <Col>No encontramos lo que buscas </Col>  </Row>
-                    }     
+                    
                 </Container>                                                    
             </div>
         </>

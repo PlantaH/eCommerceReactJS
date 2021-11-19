@@ -40,9 +40,14 @@ const ItemListContainer = () => {
     }, [name,filterByProduct])  
 
     useEffect(() => {               
-        setShowProductos([...productos])         
-        setPrecioMaximo(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
-        setMaxPrice(Math.max.apply(Math, productos.map(function(o) { return o.precio })))                 
+        setShowProductos([...productos])        
+        if (productos.length >0){    
+            setPrecioMaximo(Math.max.apply(Math, productos.map(function(o) { return o.precio }))) 
+            setMaxPrice(Math.max.apply(Math, productos.map(function(o) { return o.precio })))                 
+        }else{
+            setPrecioMaximo(0) 
+            setMaxPrice(0)    
+        }
     }, [productos])  
     
     function reducer() {  

@@ -13,6 +13,7 @@ const Filter = ({dispatch,filtroNuevo,setFiltroNuevo,precioMaximo,setMaxPrice}) 
       setMaxPrice(e.target.value)           
       dispatch()    
   }
+ 
   
   return (      
     <section>    
@@ -24,7 +25,7 @@ const Filter = ({dispatch,filtroNuevo,setFiltroNuevo,precioMaximo,setMaxPrice}) 
         </div>
       </section>
       <section className="mb-4">
-        <h6 className="font-weight-bold mb-3">Precio máximo USD {filterSel}</h6>
+        <h6 className="font-weight-bold mb-3">Precio máximo USD {filterSel} </h6>
         <div className="slider-price d-flex align-items-center my-4">
           <span className="font-weight-normal small text-muted mr-2">$0</span>
           <form className="multi-range-field w-100 mb-1">
